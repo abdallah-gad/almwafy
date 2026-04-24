@@ -228,10 +228,25 @@
             padding: 30px;
             border-top: 1px solid #d4af37;
         }
+        .social-section {
+            margin: 30px 0;
+        }
+        .social-text {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
         .social-icons a {
             color: #d4af37;
             font-size: 26px;
-            margin-left: 20px;
             display: inline-block;
             transition: 0.2s;
         }
@@ -239,6 +254,7 @@
             color: white;
             transform: translateY(-3px);
         }
+        /* تحسين للجوال */
         @media (max-width: 800px) {
             .nav-links {
                 display: none;
@@ -258,6 +274,12 @@
             }
             .section-title {
                 font-size: 1.8rem;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .social-text {
+                text-align: center;
             }
         }
     </style>
@@ -310,22 +332,24 @@
             <p><i class="fas fa-map-pin"></i> الفروانية - قطعة 6</p>
             <p><i class="fas fa-phone-alt"></i> +965 503 66527</p>
             <p><i class="fas fa-envelope"></i> almwafyllsyramykwalmqawlat@gmail.com</p>
-            <div class="social-icons">
-                <!-- واتساب - الأول -->
-                <a href="https://wa.me/96550366527" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/mohamd_almwafy" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@mohammedalmuwaf" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="mailto:almwafyllsyramykwalmqawlat@gmail.com"><i class="fas fa-envelope"></i></a>
+            
+            <!-- ✅ قسم التواصل الاجتماعي مع النص الجديد ✅ -->
+            <div class="social-section">
+    <div class="social-text">
+        👇🏻 اضغط على المنصات للتواصل معنا 👇🏻
+    </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/96550366527" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/mohamd_almwafy" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@mohammedalmuwaf" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:almwafyllsyramykwalmqawlat@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
         <div class="contact-form">
-            <!-- ✅ الفورم باستخدام طريقة action المباشرة من FormSubmit ✅ -->
             <form action="https://formsubmit.co/almwafyllsyramykwalmqawlat@gmail.com" method="POST" id="contactForm">
-                <!-- إخفاء الكابتشا -->
                 <input type="hidden" name="_captcha" value="false">
-                <!-- تنسيق الإيميل الواصل -->
                 <input type="hidden" name="_template" value="table">
-                <!-- إعادة التوجيه بعد الإرسال إلى نفس الصفحة مع رسالة نجاح -->
                 <input type="hidden" name="_next" value="https://abdallah-gad.github.io/almwafy/">
                 
                 <input type="text" name="name" id="nameInput" placeholder="الاسم بالكامل" required>
@@ -402,11 +426,10 @@
         });
     }
 
-    // رسالة تأكيد عند إرسال النموذج (اختياري)
+    // رسالة تأكيد عند إرسال النموذج
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // نترك الفورم يعمل بشكل طبيعي ولكن نعطي رسالة قبل الإرسال
             const name = document.getElementById('nameInput')?.value.trim();
             if(!name) {
                 e.preventDefault();
